@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a7d9691f-4b5a-452d-86b1-c0acfbc6451b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Stick_Man.py</StartupFile>
+    <StartupFile>Main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,36 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Stick_Man.py" />
+    <Compile Include="Helpers\Collision.py" />
+    <Compile Include="Main.py" />
+    <Compile Include="Models\Coords.py" />
+    <Compile Include="Models\PlatformSprite.py" />
+    <Compile Include="Models\Sprite.py" />
+    <Compile Include="Models\StickMan.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
+    <Folder Include="Assets\animations\" />
+    <Folder Include="Assets\images\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\animations\background.gif" />
+    <Content Include="Assets\animations\door-closed.gif" />
+    <Content Include="Assets\animations\door-open.gif" />
+    <Content Include="Assets\animations\figure-L1.gif" />
+    <Content Include="Assets\animations\figure-L2.gif" />
+    <Content Include="Assets\animations\figure-L3.gif" />
+    <Content Include="Assets\animations\figure-r1.gif" />
+    <Content Include="Assets\animations\figure-r2.gif" />
+    <Content Include="Assets\animations\figure-r3.gif" />
+    <Content Include="Assets\animations\platform1.gif" />
+    <Content Include="Assets\animations\platform2.gif" />
+    <Content Include="Assets\animations\platform3.gif" />
+    <Content Include="Assets\images\figure-r1.xcf" />
+    <Content Include="Assets\images\figure-r2.xcf" />
+    <Content Include="Assets\images\figure-r3.xcf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
