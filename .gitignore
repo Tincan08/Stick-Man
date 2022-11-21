@@ -127,5 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*/.vs
 /.vs
-/Stick Man/.vs/Stick Man
+/src/Stick Man/.vs
