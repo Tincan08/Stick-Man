@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="Helpers\Collision.py" />
     <Compile Include="Main.py" />
+    <Compile Include="Models\StickFigureSprite.py" />
     <Compile Include="Models\Coords.py" />
     <Compile Include="Models\PlatformSprite.py" />
     <Compile Include="Models\Sprite.py" />
@@ -31,7 +32,6 @@
   <ItemGroup>
     <Folder Include="Assets\" />
     <Folder Include="Assets\animations\" />
-    <Folder Include="Assets\images\" />
     <Folder Include="Helpers\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -48,9 +48,6 @@
     <Content Include="Assets\animations\platform1.gif" />
     <Content Include="Assets\animations\platform2.gif" />
     <Content Include="Assets\animations\platform3.gif" />
-    <Content Include="Assets\images\figure-r1.xcf" />
-    <Content Include="Assets\images\figure-r2.xcf" />
-    <Content Include="Assets\images\figure-r3.xcf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
