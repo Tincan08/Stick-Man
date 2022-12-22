@@ -5,7 +5,7 @@ class Sprite:
         self.coordinates = None
 
     def Move(self):
-        pass
+        pass #ToDo: Update this with movement logic.
 
     def Coords(self):
         return self.coordinates
