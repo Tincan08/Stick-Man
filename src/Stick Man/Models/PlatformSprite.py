@@ -1,5 +1,5 @@
-from .Sprite import Sprite
-from .Coords import Coords
+from Models.Sprite import Sprite
+from Models.Coords import Coords
 
 class PlatformSprite(Sprite):
     def __init__(self, game, photo_image, x, y, width, height):

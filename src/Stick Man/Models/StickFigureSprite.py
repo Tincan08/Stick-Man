@@ -1,7 +1,7 @@
 from tkinter import PhotoImage
 from Helpers.Collision import *
-from .Sprite import Sprite
-from .Coords import Coords
+from Models.Sprite import Sprite
+from Models.Coords import Coords
 import time
 
 class StickFigureSprite(Sprite):
@@ -20,7 +20,7 @@ class StickFigureSprite(Sprite):
             ]
 
         self.image = game.canvas.create_image(200, 470, image=self.images_left[0], anchor="nw")
-        self.x = -2 
+        self.x = -2
         self.y = 0
         self.current_image = 0
         self.current_image_add = 1
@@ -63,8 +63,9 @@ class StickFigureSprite(Sprite):
                 self.game.canvas.itemconfig(self.image, image=self.images_right[2])
             else:
                 self.game.canvas.itemconfig(self.image, image=self.images_right[self.current_image])
+
     def coords(self):
-        xy + self.game.canvas.coords(self.image)
+        xy = self.game.canvas.coords(self.image)
         self.coordinates.x1 = xy[0]
         self.coordinates.y1 = xy[1]
         self.coordinates.x2 = xy[0] + 27
@@ -84,7 +85,7 @@ class StickFigureSprite(Sprite):
         right = True
         top = True
         bottom = True
-        falling = True 
+        falling = True
         if self.y > 0 and co.y2 >= self.game.canvas_height:
             self.y = 0
             bottom = False
@@ -103,7 +104,7 @@ class StickFigureSprite(Sprite):
             sprite_co = sprite.coords()
             if top and self.y < 0 and collided_top(co, sprite_co):
                 self.y = -self.y
-                top = False 
+                top = False
             if bottom and self.y > 0 and collided_bottom(self.y, co, sprite_co):
                 self.y = sprite_co.y1 - co.y2
                 if self.y < 0:
@@ -116,7 +117,7 @@ class StickFigureSprite(Sprite):
                 self.x = 0
                 left = False
             if right and self.x > 0 and collided_right(co, sprite_co):
-                self.x = 0 
+                self.x = 0
                 right = False
             if falling and bottom and self.y == 0 and co.y2 < self.game.canvas_height:
                 self.y = 4

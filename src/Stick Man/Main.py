@@ -2,7 +2,6 @@ from tkinter import PhotoImage
 from Models.StickMan import StickMan
 from Models.PlatformSprite import PlatformSprite
 from Models.StickFigureSprite import StickFigureSprite
-from Helpers.Collision import *
 
 class Main:
     g = StickMan()
