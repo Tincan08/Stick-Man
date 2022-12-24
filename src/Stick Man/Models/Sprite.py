@@ -4,8 +4,8 @@ class Sprite:
         self.endgame = False
         self.coordinates = None
 
-    def Move(self):
-        pass #ToDo: Update this with movement logic.
+    def move(self):
+        pass
 
-    def Coords(self):
+    def coords(self):
         return self.coordinates

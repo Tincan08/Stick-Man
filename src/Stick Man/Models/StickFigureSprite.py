@@ -113,7 +113,7 @@ class StickFigureSprite(Sprite):
                 top = False
             if bottom and falling and self.y == 0 and co.y2 < self.game.canvas_height and collided_bottom(1, co, sprite_co):
                 falling = False
-            if left and self.x < 0 and collided_left(sprite_co):
+            if left and self.x < 0 and collided_left(co, sprite_co):
                 self.x = 0
                 left = False
             if right and self.x > 0 and collided_right(co, sprite_co):
