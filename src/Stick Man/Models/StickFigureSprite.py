@@ -53,6 +53,7 @@ class StickFigureSprite(Sprite):
                     self.current_image_add = -1
                 if self.current_image <= 0:
                     self.current_image_add = 1
+
         if self.x < 0:
             if self.y !=0:
                 self.game.canvas.itemconfig(self.image, image=self.images_left[2])
@@ -78,26 +79,31 @@ class StickFigureSprite(Sprite):
             self.jump_count += 1
             if self.jump_count > 20:
                 self.y = 4
+
         if self.y > 0:
             self.jump_count -= 1
+
         co = self.coords()
         left = True
         right = True
         top = True
         bottom = True
         falling = True
+
         if self.y > 0 and co.y2 >= self.game.canvas_height:
             self.y = 0
             bottom = False
         elif self.y < 0 and co.y1 <= 0:
             self.y = 0
             top = False
+
         if self.x > 0 and co.x2 >= self.game.canvas_width:
             self.x = 0
             right = False
         elif self.x < 0 and co.x1 <= 0:
             self.x = 0
             left = False
+
         for sprite in self.game.sprites:
             if sprite == self:
                 continue
@@ -123,6 +129,7 @@ class StickFigureSprite(Sprite):
                 right = False
                 if sprite.endgame:
                     self.game.running = False
-            if falling and bottom and self.y == 0 and co.y2 < self.game.canvas_height:
-                self.y = 4
-            self.game.canvas.move(self.image, self.x, self.y)
+
+        if falling and bottom and self.y == 0 and co.y2 < self.game.canvas_height:
+            self.y = 4
+        self.game.canvas.move(self.image, self.x, self.y)
