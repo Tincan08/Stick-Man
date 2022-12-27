@@ -2,6 +2,7 @@ from tkinter import PhotoImage
 from Models.StickMan import StickMan
 from Models.PlatformSprite import PlatformSprite
 from Models.StickFigureSprite import StickFigureSprite
+from Models.DoorSprite import DoorSprite
 
 class Main:
     g = StickMan()
@@ -15,6 +16,8 @@ class Main:
     platform8 = PlatformSprite(g, PhotoImage(file = "Assets/animations/platform2.gif"), 45, 60, 66, 10)
     platform9 = PlatformSprite(g, PhotoImage(file = "Assets/animations/platform3.gif"), 170, 250, 32, 10)
     platform10 = PlatformSprite(g, PhotoImage(file = "Assets/animations/platform3.gif"), 230, 200, 32, 10)
+    door = DoorSprite(g, PhotoImage(file = "Assets/animations/door-closed.gif"),45, 30, 40, 35)
+    g.sprites.append(door)
     g.sprites.append(platform1)
     g.sprites.append(platform2)
     g.sprites.append(platform3)

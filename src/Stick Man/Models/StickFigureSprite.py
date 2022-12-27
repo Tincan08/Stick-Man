@@ -116,9 +116,13 @@ class StickFigureSprite(Sprite):
             if left and self.x < 0 and collided_left(co, sprite_co):
                 self.x = 0
                 left = False
+                if sprite.endgame:
+                    self.game.running = False
             if right and self.x > 0 and collided_right(co, sprite_co):
                 self.x = 0
                 right = False
+                if sprite.endgame:
+                    self.game.running = False
             if falling and bottom and self.y == 0 and co.y2 < self.game.canvas_height:
                 self.y = 4
             self.game.canvas.move(self.image, self.x, self.y)

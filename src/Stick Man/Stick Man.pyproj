@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="Helpers\Collision.py" />
     <Compile Include="Main.py" />
+    <Compile Include="Models\DoorSprite.py" />
     <Compile Include="Models\StickFigureSprite.py" />
     <Compile Include="Models\Coords.py" />
     <Compile Include="Models\PlatformSprite.py" />
