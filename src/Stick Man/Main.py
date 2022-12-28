@@ -4,8 +4,15 @@ from Models.PlatformSprite import PlatformSprite
 from Models.StickFigureSprite import StickFigureSprite
 from Models.DoorSprite import DoorSprite
 
+"""
+Main entry point for the application.  
+
+This class begins the game processing, loads assets into the game, initilizes game parameters, and starts the main loop for the game.
+"""
 class Main:
-    g = StickMan()
+    g = StickMan() # Initialize StickMan class, this will begin the instance of the game.
+
+    # Create door, player, and platform objects, and set coordinates for placement in the game.
     platform1 = PlatformSprite(g, PhotoImage(file = "Assets/animations/platform1.gif"), 0, 480, 100, 10)
     platform2 = PlatformSprite(g, PhotoImage(file = "Assets/animations/platform1.gif"), 150, 440, 100, 10)
     platform3 = PlatformSprite(g, PhotoImage(file = "Assets/animations/platform1.gif"), 300, 400, 100, 10)
@@ -17,6 +24,9 @@ class Main:
     platform9 = PlatformSprite(g, PhotoImage(file = "Assets/animations/platform3.gif"), 170, 250, 32, 10)
     platform10 = PlatformSprite(g, PhotoImage(file = "Assets/animations/platform3.gif"), 230, 200, 32, 10)
     door = DoorSprite(g, PhotoImage(file = "Assets/animations/door-closed.gif"),45, 30, 40, 35)
+    sf = StickFigureSprite(g)
+
+    # Append objects to the list of sprites and load them into the game.
     g.sprites.append(door)
     g.sprites.append(platform1)
     g.sprites.append(platform2)
@@ -28,7 +38,7 @@ class Main:
     g.sprites.append(platform8)
     g.sprites.append(platform9)
     g.sprites.append(platform10)
-    sf = StickFigureSprite(g)
     g.sprites.append(sf)
-    g.mainloop()
+
+    g.mainloop() # Begin the game's main loop logic.
 
